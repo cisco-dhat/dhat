@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+
+  db:
+    image: rafiya1908/dhat_db
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  web:
+    image: rafiya1908/dhat_web
+    command: sh -c "/etc/init.d/cron start && python manage.py migrate && python manage.py crontab add &&  exec python manage.py runserver 0.0.0.0:8000"
+
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+volumes:
+    postgres-data:
