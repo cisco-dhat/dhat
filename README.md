@@ -3,7 +3,7 @@ This repositry consists the docker-compose files for different platforms to run 
 
 ## It can be downloaded by:
 
-git clone https://github.com/cisco-dhat/dhat/
+```git clone https://github.com/cisco-dhat/dhat/```
 
 ## Enter the folder you cloned:
 
